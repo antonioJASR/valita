@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 Antonio Sánchez <joanzare@gmail.com> -->
+<component type="desktop">
+  <id>com.github.antonioJASR.valita</id>
+  <metadata_license>CC0</metadata_license>
+  <name>Valita</name>
+  <summary>A Catchy Tagline</summary>
+  <description>
+    <p>A quick summary of your app's main selling points and features. Just a couple sentences per paragraph is best.</p>
+  </description>
+</component>
