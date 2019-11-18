@@ -30,11 +30,21 @@ public class MyApp : Gtk.Application {
         grid.add (button);
         grid.add (label);
         
-        this.setupNotifications(grid);
+        this.setupNotifications (grid);
+        this.setupSwitch (grid);
 
         main_window.add (grid);
         main_window.show_all ();
     
+    }
+
+    private void setupSwitch (Gtk.Grid grid) {
+        var settings = new GLib.Settings ("com.github.antonioJASR.valita");
+        var useless_switch = new Gtk.Switch();
+        settings.bind ("useless-setting", useless_switch, "active",
+                       GLib.SettingsBindFlags.DEFAULT);
+
+        grid.add (useless_switch);
     }
 
     private void setupNotifications(Gtk.Grid grid) {
