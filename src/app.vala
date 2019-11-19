@@ -25,6 +25,8 @@ public class MyApp : Gtk.Application {
             label.label = "Hello World!";
             label.angle = 90;
             button.sensitive = false;
+
+            readFile();
         });
 
         grid.add (button);
@@ -36,6 +38,27 @@ public class MyApp : Gtk.Application {
         main_window.add (grid);
         main_window.show_all ();
     
+    }
+
+
+    /* Example of how to read a file in Vala */
+    private void readFile() {
+        try {
+            File file = null;
+            file = File.new_for_path("../src/app.vala");
+
+            var stream = file.read();
+            var data_stream = new DataInputStream(stream);
+
+            size_t data_read;
+            /* Deprecated, try to update this code */
+            var data = data_stream.read_until("", out data_read);
+
+            stdout.printf(data);
+        } catch (Error e) {
+            print ("%s\n", e.message);
+        }
+
     }
 
     private void setupSwitch (Gtk.Grid grid) {
